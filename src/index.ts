@@ -3,13 +3,14 @@ import { ApolloServer } from 'apollo-server-express'
 import { applyMiddleware } from 'graphql-middleware'
 import schema from './schema'
 import { PORT } from './utils/constants'
+import { createContext } from './utils/context'
 
-export const main = async (): Promise<void> => {
+const start = async (): Promise<void> => {
    const app = express()
 
    const server = new ApolloServer({
       schema: applyMiddleware(schema),
-
+      context: createContext,
       introspection: true,
       playground: true,
    })
@@ -24,4 +25,4 @@ export const main = async (): Promise<void> => {
    )
 }
 
-main()
+start()

@@ -1,0 +1,36 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Juoma {
+  id                Int     @id @default(autoincrement())
+  nimi              String
+  valmistaja        String
+  pulloKoko         String
+  hinta             Int
+  litraHinta        Int
+  tyyppi            String
+  alaTyyppi         String?
+  olutTyyppi        String?
+  valmistusMaa      String
+  alue              String
+  vuosikerta        Int
+  huomautus         String?
+  rypaleet          String
+  luennehdinta      String
+  pakkausTyyppi     String
+  suljentaTyyppi    String
+  alkoholiProsentti Int
+  haporGL           Int
+  sokeriGL          Int
+  energia100ML      Int
+  Valikoima         String
+}

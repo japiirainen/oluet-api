@@ -5,7 +5,7 @@ import { mutationType } from '@nexus/schema'
 import { queryType } from '@nexus/schema'
 import { objectType } from '@nexus/schema'
 
-const JuomeT = objectType({
+const JuomaT = objectType({
    name: 'Juoma',
    definition(t) {
       t.id('id')
@@ -49,7 +49,7 @@ const pathToTypes = path.join(__dirname, 'generated', 'nexus.ts')
 const pathToContext = path.join(__dirname, '..', 'utils', 'context.ts')
 
 export default makeSchema({
-   types: [Query, Mutation, JuomeT],
+   types: [Query, Mutation, JuomaT],
    plugins: [nexusPrisma({ experimentalCRUD: true })],
    outputs: {
       schema: pathToSchema,

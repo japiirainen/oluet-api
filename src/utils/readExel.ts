@@ -1,11 +1,15 @@
 import Excel, { Workbook } from 'exceljs'
 import { ALKO_FILE } from './constants'
-import { tryCatch, TaskEither } from 'fp-ts/lib/TaskEither'
-import { toError } from 'fp-ts/lib/Either'
 
 const workbook = new Excel.Workbook()
 
-export const readXlsx = (path: string): TaskEither<Error, Workbook> =>
-   tryCatch(() => workbook.xlsx.readFile(path), toError)
+export const readXlsx = async (path: string): Promise<Workbook | void> => {
+   try {
+      const file = await workbook.xlsx.readFile(path)
+      return file
+   } catch (e) {
+      console.error(e)
+   }
+}
 
-readXlsx(ALKO_FILE)().then(console.error, console.log)
+console.log(readXlsx(ALKO_FILE).then(console.log))

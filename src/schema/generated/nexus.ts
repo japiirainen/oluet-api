@@ -4,9 +4,17 @@
  */
 
 import * as Context from "../../utils/context"
-
-
-
+import { core } from "@nexus/schema"
+declare global {
+  interface NexusGenCustomInputMethods<TypeName extends string> {
+    date<FieldName extends string>(fieldName: FieldName, opts?: core.ScalarInputFieldConfig<core.GetGen3<"inputTypes", TypeName, FieldName>>): void // "Date";
+  }
+}
+declare global {
+  interface NexusGenCustomOutputMethods<TypeName extends string> {
+    date<FieldName extends string>(fieldName: FieldName, ...opts: core.ScalarOutSpread<TypeName, FieldName>): void // "Date";
+  }
+}
 declare global {
   interface NexusGenCustomOutputProperties<TypeName extends string> {
     crud: NexusPrisma<TypeName, 'crud'>
@@ -19,6 +27,9 @@ declare global {
 }
 
 export interface NexusGenInputs {
+  DateTimeFieldUpdateOperationsInput: { // input type
+    set?: NexusGenScalars['DateTime'] | null; // DateTime
+  }
   FloatFieldUpdateOperationsInput: { // input type
     set?: number | null; // Float
   }
@@ -29,6 +40,7 @@ export interface NexusGenInputs {
     alaTyyppi?: string | null; // String
     alkoholiProsentti: number; // Float!
     alue: string; // String!
+    created: NexusGenScalars['DateTime']; // DateTime!
     energia100ML: number; // Float!
     hapotGL: number; // Float!
     hinta: number; // Float!
@@ -52,6 +64,7 @@ export interface NexusGenInputs {
     alaTyyppi?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     alkoholiProsentti?: NexusGenInputs['FloatFieldUpdateOperationsInput'] | null; // FloatFieldUpdateOperationsInput
     alue?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    created?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
     energia100ML?: NexusGenInputs['FloatFieldUpdateOperationsInput'] | null; // FloatFieldUpdateOperationsInput
     hapotGL?: NexusGenInputs['FloatFieldUpdateOperationsInput'] | null; // FloatFieldUpdateOperationsInput
     hinta?: NexusGenInputs['FloatFieldUpdateOperationsInput'] | null; // FloatFieldUpdateOperationsInput
@@ -91,6 +104,8 @@ export interface NexusGenScalars {
   Float: number
   Boolean: boolean
   ID: string
+  Date: Date
+  DateTime: any
 }
 
 export interface NexusGenRootTypes {
@@ -98,6 +113,7 @@ export interface NexusGenRootTypes {
     alaTyyppi?: string | null; // String
     alkoholiProsentti?: number | null; // Float
     alue?: string | null; // String
+    created?: NexusGenScalars['Date'] | null; // Date
     energia100ML?: number | null; // Float
     hapotGL?: number | null; // Float
     hinta?: number | null; // Float
@@ -123,6 +139,7 @@ export interface NexusGenRootTypes {
 }
 
 export interface NexusGenAllTypes extends NexusGenRootTypes {
+  DateTimeFieldUpdateOperationsInput: NexusGenInputs['DateTimeFieldUpdateOperationsInput'];
   FloatFieldUpdateOperationsInput: NexusGenInputs['FloatFieldUpdateOperationsInput'];
   IntFieldUpdateOperationsInput: NexusGenInputs['IntFieldUpdateOperationsInput'];
   JuomaCreateInput: NexusGenInputs['JuomaCreateInput'];
@@ -135,6 +152,8 @@ export interface NexusGenAllTypes extends NexusGenRootTypes {
   Float: NexusGenScalars['Float'];
   Boolean: NexusGenScalars['Boolean'];
   ID: NexusGenScalars['ID'];
+  Date: NexusGenScalars['Date'];
+  DateTime: NexusGenScalars['DateTime'];
 }
 
 export interface NexusGenFieldTypes {
@@ -142,6 +161,7 @@ export interface NexusGenFieldTypes {
     alaTyyppi: string | null; // String
     alkoholiProsentti: number | null; // Float
     alue: string | null; // String
+    created: NexusGenScalars['Date'] | null; // Date
     energia100ML: number | null; // Float
     hapotGL: number | null; // Float
     hinta: number | null; // Float
@@ -202,13 +222,13 @@ export interface NexusGenInheritedFields {}
 
 export type NexusGenObjectNames = "Juoma" | "Mutation" | "Query";
 
-export type NexusGenInputNames = "FloatFieldUpdateOperationsInput" | "IntFieldUpdateOperationsInput" | "JuomaCreateInput" | "JuomaUpdateInput" | "JuomaWhereUniqueInput" | "NullableStringFieldUpdateOperationsInput" | "StringFieldUpdateOperationsInput";
+export type NexusGenInputNames = "DateTimeFieldUpdateOperationsInput" | "FloatFieldUpdateOperationsInput" | "IntFieldUpdateOperationsInput" | "JuomaCreateInput" | "JuomaUpdateInput" | "JuomaWhereUniqueInput" | "NullableStringFieldUpdateOperationsInput" | "StringFieldUpdateOperationsInput";
 
 export type NexusGenEnumNames = never;
 
 export type NexusGenInterfaceNames = never;
 
-export type NexusGenScalarNames = "Boolean" | "Float" | "ID" | "Int" | "String";
+export type NexusGenScalarNames = "Boolean" | "Date" | "DateTime" | "Float" | "ID" | "Int" | "String";
 
 export type NexusGenUnionNames = never;
 

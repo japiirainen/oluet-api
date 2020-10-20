@@ -2,6 +2,17 @@
 ### Do not make changes to this file directly
 
 
+"""
+A date string, such as 2007-12-03, compliant with the `full-date` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.
+"""
+scalar Date
+
+scalar DateTime
+
+input DateTimeFieldUpdateOperationsInput {
+  set: DateTime
+}
+
 input FloatFieldUpdateOperationsInput {
   set: Float
 }
@@ -14,6 +25,7 @@ type Juoma {
   alaTyyppi: String
   alkoholiProsentti: Float
   alue: String
+  created: Date
   energia100ML: Float
   hapotGL: Float
   hinta: Float
@@ -39,6 +51,7 @@ input JuomaCreateInput {
   alaTyyppi: String
   alkoholiProsentti: Float!
   alue: String!
+  created: DateTime!
   energia100ML: Float!
   hapotGL: Float!
   hinta: Float!
@@ -63,6 +76,7 @@ input JuomaUpdateInput {
   alaTyyppi: NullableStringFieldUpdateOperationsInput
   alkoholiProsentti: FloatFieldUpdateOperationsInput
   alue: StringFieldUpdateOperationsInput
+  created: DateTimeFieldUpdateOperationsInput
   energia100ML: FloatFieldUpdateOperationsInput
   hapotGL: FloatFieldUpdateOperationsInput
   hinta: FloatFieldUpdateOperationsInput

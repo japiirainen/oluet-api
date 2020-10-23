@@ -4,12 +4,13 @@ export const JuomaT = objectType({
    name: 'Juoma',
    definition(t) {
       t.id('id')
+      t.date('date')
       t.string('productId')
       t.string('nimi', { nullable: true })
       t.string('valmistaja', { nullable: true })
       t.string('pulloKoko', { nullable: true })
-      t.string('hinta', { nullable: true })
-      t.string('litraHinta', { nullable: true })
+      t.float('hinta', { nullable: true })
+      t.float('litraHinta', { nullable: true })
       t.string('uutuus', { nullable: true })
       t.string('hinnastoJarjestysKoodi', { nullable: true })
       t.string('tyyppi', { nullable: true })

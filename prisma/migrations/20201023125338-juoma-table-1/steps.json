@@ -73,6 +73,13 @@
     {
       "tag": "CreateField",
       "model": "Juoma",
+      "field": "date",
+      "type": "DateTime",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Juoma",
       "field": "productId",
       "type": "String",
       "arity": "Required"
@@ -102,14 +109,14 @@
       "tag": "CreateField",
       "model": "Juoma",
       "field": "hinta",
-      "type": "String",
+      "type": "Float",
       "arity": "Optional"
     },
     {
       "tag": "CreateField",
       "model": "Juoma",
       "field": "litraHinta",
-      "type": "String",
+      "type": "Float",
       "arity": "Optional"
     },
     {
@@ -279,6 +286,74 @@
       "field": "EAN",
       "type": "String",
       "arity": "Optional"
+    },
+    {
+      "tag": "CreateModel",
+      "model": "Price"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Price",
+      "field": "id",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Price",
+          "field": "id"
+        },
+        "directive": "id"
+      }
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Price",
+          "field": "id"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Price",
+          "field": "id"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "autoincrement()"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Price",
+      "field": "date",
+      "type": "DateTime",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Price",
+      "field": "productId",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Price",
+      "field": "hinta",
+      "type": "Float",
+      "arity": "Required"
     }
   ]
 }

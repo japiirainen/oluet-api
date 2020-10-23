@@ -8,13 +8,14 @@ generator client {
 }
 
 model Juoma {
-  id                     Int     @id @default(autoincrement())
+  id                     Int      @id @default(autoincrement())
+  date                   DateTime
   productId              String
   nimi                   String?
   valmistaja             String?
   pulloKoko              String?
-  hinta                  String?
-  litraHinta             String?
+  hinta                  Float?
+  litraHinta             Float?
   uutuus                 String?
   hinnastoJarjestysKoodi String?
   tyyppi                 String?
@@ -39,4 +40,11 @@ model Juoma {
   energia100ML           String?
   valikoima              String?
   EAN                    String?
+}
+
+model Price {
+  id        Int      @id @default(autoincrement())
+  date      DateTime
+  productId String
+  hinta     Float
 }

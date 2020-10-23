@@ -7,22 +7,29 @@ A date string, such as 2007-12-03, compliant with the `full-date` format outline
 """
 scalar Date
 
+scalar DateTime
+
+input DateTimeFieldUpdateOperationsInput {
+  set: DateTime
+}
+
 type Juoma {
   alaTyyppi: String
   alkoholiProsentti: String
   alue: String
+  date: Date
   EAN: String
   energia100ML: String
   erityisryhma: String
   etikettimerkintoja: String
   hapotGL: String
   hinnastoJarjestysKoodi: String
-  hinta: String
+  hinta: Float
   huomautus: String
   id: ID
   kantavierrep: Float
   katkerot: String
-  litraHinta: String
+  litraHinta: Float
   luonnehdinta: String
   nimi: String
   olutTyyppi: String
@@ -45,17 +52,18 @@ input JuomaCreateInput {
   alaTyyppi: String
   alkoholiProsentti: String
   alue: String
+  date: DateTime!
   EAN: String
   energia100ML: String
   erityisryhma: String
   etikettimerkintoja: String
   hapotGL: String
   hinnastoJarjestysKoodi: String
-  hinta: String
+  hinta: Float
   huomautus: String
   kantavierrep: Float
   katkerot: String
-  litraHinta: String
+  litraHinta: Float
   luennehdinta: String
   nimi: String
   olutTyyppi: String
@@ -78,17 +86,18 @@ input JuomaUpdateInput {
   alaTyyppi: NullableStringFieldUpdateOperationsInput
   alkoholiProsentti: NullableStringFieldUpdateOperationsInput
   alue: NullableStringFieldUpdateOperationsInput
+  date: DateTimeFieldUpdateOperationsInput
   EAN: NullableStringFieldUpdateOperationsInput
   energia100ML: NullableStringFieldUpdateOperationsInput
   erityisryhma: NullableStringFieldUpdateOperationsInput
   etikettimerkintoja: NullableStringFieldUpdateOperationsInput
   hapotGL: NullableStringFieldUpdateOperationsInput
   hinnastoJarjestysKoodi: NullableStringFieldUpdateOperationsInput
-  hinta: NullableStringFieldUpdateOperationsInput
+  hinta: NullableFloatFieldUpdateOperationsInput
   huomautus: NullableStringFieldUpdateOperationsInput
   kantavierrep: NullableFloatFieldUpdateOperationsInput
   katkerot: NullableStringFieldUpdateOperationsInput
-  litraHinta: NullableStringFieldUpdateOperationsInput
+  litraHinta: NullableFloatFieldUpdateOperationsInput
   luennehdinta: NullableStringFieldUpdateOperationsInput
   nimi: NullableStringFieldUpdateOperationsInput
   olutTyyppi: NullableStringFieldUpdateOperationsInput

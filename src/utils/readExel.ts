@@ -1,35 +1,41 @@
 import { readFile, utils } from 'xlsx'
 
-export const readXlsx = async (fileName: string): Promise<unknown> => {
+export const readXlsx = async (fileName: string): Promise<any> => {
    const book = await readFile(fileName)
    const sheet = book.Sheets['Alkon Hinnasto Tekstitiedostona']
    return utils.sheet_to_json(sheet, {
       raw: true,
+      blankrows: true,
       header: [
-         'id',
-         'created',
+         'productId',
          'nimi',
          'valmistaja',
-         'pullokoko',
+         'pulloKoko',
          'hinta',
-         'litrahinta',
+         'litraHinta',
+         'uutuus',
+         'hinnastoJarjestysKoodi',
          'tyyppi',
          'alaTyyppi',
+         'erityisryhma',
          'olutTyyppi',
          'valmistusMaa',
          'alue',
          'vuosikerta',
+         'etikettimerkintoja',
          'huomautus',
          'rypaleet',
-         'luonnehdinta',
+         'luennehdinta',
          'pakkausTyyppi',
          'suljentaTyyppi',
          'alkoholiProsentti',
-         'alkoholiProsenti',
          'hapotGL',
          'sokeriGL',
+         'kantavierrep',
+         'katkerot',
          'energia100ML',
          'valikoima',
+         'EAN',
       ],
    })
 }

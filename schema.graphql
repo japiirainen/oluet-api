@@ -7,94 +7,103 @@ A date string, such as 2007-12-03, compliant with the `full-date` format outline
 """
 scalar Date
 
-scalar DateTime
-
-input DateTimeFieldUpdateOperationsInput {
-  set: DateTime
-}
-
-input FloatFieldUpdateOperationsInput {
-  set: Float
-}
-
 input IntFieldUpdateOperationsInput {
   set: Int
 }
 
 type Juoma {
   alaTyyppi: String
-  alkoholiProsentti: Float
+  alkoholiProsentti: String
   alue: String
-  created: Date
-  energia100ML: Float
-  hapotGL: Float
-  hinta: Float
+  EAN: String
+  energia100ML: String
+  erityisryhma: String
+  etikettimerkintoja: String
+  hapotGL: String
+  hinta: String
   huomautus: String
   id: ID
+  kantavierrep: String
+  katkerot: String
   litraHinta: String
-  luennehdinta: String
+  luonnehdinta: String
   nimi: String
   olutTyyppi: String
   pakkausTyyppi: String
-  pulloKoko: Float
+  productId: String
+  pulloKoko: String
   rypaleet: String
-  sokeriGL: Float
+  sokeriGL: Int
   suljentaTyyppi: String
   tyyppi: String
   valikoima: String
   valmistaja: String
   valmistusMaa: String
-  vuosikerta: Int
+  vuosikerta: String
 }
 
 input JuomaCreateInput {
   alaTyyppi: String
-  alkoholiProsentti: Float!
+  alkoholiProsentti: String!
   alue: String!
-  created: DateTime!
-  energia100ML: Float!
-  hapotGL: Float!
-  hinta: Float!
+  EAN: String
+  energia100ML: String
+  erityisryhma: String
+  etikettimerkintoja: String
+  hapotGL: String!
+  hinnastoJarjestysKoodi: String!
+  hinta: String!
   huomautus: String
-  litraHinta: Float!
+  kantavierrep: String
+  katkerot: String
+  litraHinta: String!
   luennehdinta: String!
   nimi: String!
   olutTyyppi: String
   pakkausTyyppi: String!
+  productId: String!
   pulloKoko: String!
   rypaleet: String
-  sokeriGL: Float!
+  sokeriGL: Int!
   suljentaTyyppi: String!
   tyyppi: String!
-  valikoima: String!
+  uutuus: String
+  valikoima: String
   valmistaja: String!
   valmistusMaa: String!
-  vuosikerta: Int!
+  vuosikerta: String!
 }
 
 input JuomaUpdateInput {
   alaTyyppi: NullableStringFieldUpdateOperationsInput
-  alkoholiProsentti: FloatFieldUpdateOperationsInput
+  alkoholiProsentti: StringFieldUpdateOperationsInput
   alue: StringFieldUpdateOperationsInput
-  created: DateTimeFieldUpdateOperationsInput
-  energia100ML: FloatFieldUpdateOperationsInput
-  hapotGL: FloatFieldUpdateOperationsInput
-  hinta: FloatFieldUpdateOperationsInput
+  EAN: NullableStringFieldUpdateOperationsInput
+  energia100ML: NullableStringFieldUpdateOperationsInput
+  erityisryhma: NullableStringFieldUpdateOperationsInput
+  etikettimerkintoja: NullableStringFieldUpdateOperationsInput
+  hapotGL: StringFieldUpdateOperationsInput
+  hinnastoJarjestysKoodi: StringFieldUpdateOperationsInput
+  hinta: StringFieldUpdateOperationsInput
   huomautus: NullableStringFieldUpdateOperationsInput
-  litraHinta: FloatFieldUpdateOperationsInput
+  kantavierrep: NullableStringFieldUpdateOperationsInput
+  katkerot: NullableStringFieldUpdateOperationsInput
+  litraHinta: StringFieldUpdateOperationsInput
   luennehdinta: StringFieldUpdateOperationsInput
   nimi: StringFieldUpdateOperationsInput
   olutTyyppi: NullableStringFieldUpdateOperationsInput
   pakkausTyyppi: StringFieldUpdateOperationsInput
+  productId: StringFieldUpdateOperationsInput
   pulloKoko: StringFieldUpdateOperationsInput
   rypaleet: NullableStringFieldUpdateOperationsInput
-  sokeriGL: FloatFieldUpdateOperationsInput
+  sokeriGL: IntFieldUpdateOperationsInput
   suljentaTyyppi: StringFieldUpdateOperationsInput
   tyyppi: StringFieldUpdateOperationsInput
-  valikoima: StringFieldUpdateOperationsInput
+  uutuus: NullableStringFieldUpdateOperationsInput
+  valikoima: NullableStringFieldUpdateOperationsInput
   valmistaja: StringFieldUpdateOperationsInput
   valmistusMaa: StringFieldUpdateOperationsInput
-  vuosikerta: IntFieldUpdateOperationsInput
+  vuosikerta: StringFieldUpdateOperationsInput
 }
 
 input JuomaWhereUniqueInput {
@@ -103,6 +112,7 @@ input JuomaWhereUniqueInput {
 
 type Mutation {
   createOneJuoma(data: JuomaCreateInput!): Juoma!
+  saveAllDrinks: Juoma
   updateOneJuoma(data: JuomaUpdateInput!, where: JuomaWhereUniqueInput!): Juoma
 }
 

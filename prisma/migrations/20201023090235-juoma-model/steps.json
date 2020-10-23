@@ -73,8 +73,8 @@
     {
       "tag": "CreateField",
       "model": "Juoma",
-      "field": "created",
-      "type": "DateTime",
+      "field": "productId",
+      "type": "String",
       "arity": "Required"
     },
     {
@@ -102,14 +102,28 @@
       "tag": "CreateField",
       "model": "Juoma",
       "field": "hinta",
-      "type": "Float",
+      "type": "String",
       "arity": "Required"
     },
     {
       "tag": "CreateField",
       "model": "Juoma",
       "field": "litraHinta",
-      "type": "Float",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Juoma",
+      "field": "uutuus",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Juoma",
+      "field": "hinnastoJarjestysKoodi",
+      "type": "String",
       "arity": "Required"
     },
     {
@@ -123,6 +137,13 @@
       "tag": "CreateField",
       "model": "Juoma",
       "field": "alaTyyppi",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Juoma",
+      "field": "erityisryhma",
       "type": "String",
       "arity": "Optional"
     },
@@ -151,8 +172,15 @@
       "tag": "CreateField",
       "model": "Juoma",
       "field": "vuosikerta",
-      "type": "Int",
+      "type": "String",
       "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Juoma",
+      "field": "etikettimerkintoja",
+      "type": "String",
+      "arity": "Optional"
     },
     {
       "tag": "CreateField",
@@ -193,36 +221,57 @@
       "tag": "CreateField",
       "model": "Juoma",
       "field": "alkoholiProsentti",
-      "type": "Float",
+      "type": "String",
       "arity": "Required"
     },
     {
       "tag": "CreateField",
       "model": "Juoma",
       "field": "hapotGL",
-      "type": "Float",
+      "type": "String",
       "arity": "Required"
     },
     {
       "tag": "CreateField",
       "model": "Juoma",
       "field": "sokeriGL",
-      "type": "Float",
+      "type": "Int",
       "arity": "Required"
     },
     {
       "tag": "CreateField",
       "model": "Juoma",
+      "field": "kantavierrep",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Juoma",
+      "field": "katkerot",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Juoma",
       "field": "energia100ML",
-      "type": "Float",
-      "arity": "Required"
+      "type": "String",
+      "arity": "Optional"
     },
     {
       "tag": "CreateField",
       "model": "Juoma",
       "field": "valikoima",
       "type": "String",
-      "arity": "Required"
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Juoma",
+      "field": "EAN",
+      "type": "String",
+      "arity": "Optional"
     }
   ]
 }

@@ -16,6 +16,17 @@ export const saveAllDrinks = extendType({
          type: JuomaT,
          async resolve(_root, _args, { prisma }): Promise<any> {
             const data = await readXlsx(ALKO_FILE)
+            await Promise.all(
+               data.map((juoma: any) =>
+                  prisma.price.create({
+                     data: {
+                        productId: juoma.productId,
+                        date: juoma.date,
+                        hinta: juoma.hinta,
+                     },
+                  })
+               )
+            )
             const res = await Promise.all(
                data.map((juoma: any) => prisma.juoma.create({ data: juoma }))
             )

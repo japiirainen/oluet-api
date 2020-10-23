@@ -7,10 +7,6 @@ A date string, such as 2007-12-03, compliant with the `full-date` format outline
 """
 scalar Date
 
-input IntFieldUpdateOperationsInput {
-  set: Int
-}
-
 type Juoma {
   alaTyyppi: String
   alkoholiProsentti: String
@@ -20,10 +16,11 @@ type Juoma {
   erityisryhma: String
   etikettimerkintoja: String
   hapotGL: String
+  hinnastoJarjestysKoodi: String
   hinta: String
   huomautus: String
   id: ID
-  kantavierrep: String
+  kantavierrep: Float
   katkerot: String
   litraHinta: String
   luonnehdinta: String
@@ -36,74 +33,78 @@ type Juoma {
   sokeriGL: Int
   suljentaTyyppi: String
   tyyppi: String
+  uutuus: String
   valikoima: String
   valmistaja: String
   valmistusMaa: String
+  vari: String
   vuosikerta: String
 }
 
 input JuomaCreateInput {
   alaTyyppi: String
-  alkoholiProsentti: String!
-  alue: String!
+  alkoholiProsentti: String
+  alue: String
   EAN: String
   energia100ML: String
   erityisryhma: String
   etikettimerkintoja: String
-  hapotGL: String!
-  hinnastoJarjestysKoodi: String!
-  hinta: String!
+  hapotGL: String
+  hinnastoJarjestysKoodi: String
+  hinta: String
   huomautus: String
-  kantavierrep: String
+  kantavierrep: Float
   katkerot: String
-  litraHinta: String!
-  luennehdinta: String!
-  nimi: String!
+  litraHinta: String
+  luennehdinta: String
+  nimi: String
   olutTyyppi: String
-  pakkausTyyppi: String!
+  pakkausTyyppi: String
   productId: String!
-  pulloKoko: String!
+  pulloKoko: String
   rypaleet: String
-  sokeriGL: Int!
-  suljentaTyyppi: String!
-  tyyppi: String!
+  sokeriGL: Int
+  suljentaTyyppi: String
+  tyyppi: String
   uutuus: String
   valikoima: String
-  valmistaja: String!
-  valmistusMaa: String!
-  vuosikerta: String!
+  valmistaja: String
+  valmistusMaa: String
+  vari: String
+  vuosikerta: String
 }
 
 input JuomaUpdateInput {
   alaTyyppi: NullableStringFieldUpdateOperationsInput
-  alkoholiProsentti: StringFieldUpdateOperationsInput
-  alue: StringFieldUpdateOperationsInput
+  alkoholiProsentti: NullableStringFieldUpdateOperationsInput
+  alue: NullableStringFieldUpdateOperationsInput
   EAN: NullableStringFieldUpdateOperationsInput
   energia100ML: NullableStringFieldUpdateOperationsInput
   erityisryhma: NullableStringFieldUpdateOperationsInput
   etikettimerkintoja: NullableStringFieldUpdateOperationsInput
-  hapotGL: StringFieldUpdateOperationsInput
-  hinnastoJarjestysKoodi: StringFieldUpdateOperationsInput
-  hinta: StringFieldUpdateOperationsInput
+  hapotGL: NullableStringFieldUpdateOperationsInput
+  hinnastoJarjestysKoodi: NullableStringFieldUpdateOperationsInput
+  hinta: NullableStringFieldUpdateOperationsInput
   huomautus: NullableStringFieldUpdateOperationsInput
-  kantavierrep: NullableStringFieldUpdateOperationsInput
+  kantavierrep: NullableFloatFieldUpdateOperationsInput
   katkerot: NullableStringFieldUpdateOperationsInput
-  litraHinta: StringFieldUpdateOperationsInput
-  luennehdinta: StringFieldUpdateOperationsInput
-  nimi: StringFieldUpdateOperationsInput
+  litraHinta: NullableStringFieldUpdateOperationsInput
+  luennehdinta: NullableStringFieldUpdateOperationsInput
+  nimi: NullableStringFieldUpdateOperationsInput
   olutTyyppi: NullableStringFieldUpdateOperationsInput
-  pakkausTyyppi: StringFieldUpdateOperationsInput
+  pakkausTyyppi: NullableStringFieldUpdateOperationsInput
   productId: StringFieldUpdateOperationsInput
-  pulloKoko: StringFieldUpdateOperationsInput
+  pulloKoko: NullableStringFieldUpdateOperationsInput
   rypaleet: NullableStringFieldUpdateOperationsInput
-  sokeriGL: IntFieldUpdateOperationsInput
-  suljentaTyyppi: StringFieldUpdateOperationsInput
-  tyyppi: StringFieldUpdateOperationsInput
+  sokeriGL: NullableIntFieldUpdateOperationsInput
+  suljentaTyyppi: NullableStringFieldUpdateOperationsInput
+  tyyppi: NullableStringFieldUpdateOperationsInput
   uutuus: NullableStringFieldUpdateOperationsInput
   valikoima: NullableStringFieldUpdateOperationsInput
-  valmistaja: StringFieldUpdateOperationsInput
-  valmistusMaa: StringFieldUpdateOperationsInput
-  vuosikerta: StringFieldUpdateOperationsInput
+  valmistaja: NullableStringFieldUpdateOperationsInput
+  valmistusMaa: NullableStringFieldUpdateOperationsInput
+  vari: NullableStringFieldUpdateOperationsInput
+  vuosikerta: NullableStringFieldUpdateOperationsInput
 }
 
 input JuomaWhereUniqueInput {
@@ -114,6 +115,14 @@ type Mutation {
   createOneJuoma(data: JuomaCreateInput!): Juoma!
   saveAllDrinks: Juoma
   updateOneJuoma(data: JuomaUpdateInput!, where: JuomaWhereUniqueInput!): Juoma
+}
+
+input NullableFloatFieldUpdateOperationsInput {
+  set: Float
+}
+
+input NullableIntFieldUpdateOperationsInput {
+  set: Int
 }
 
 input NullableStringFieldUpdateOperationsInput {

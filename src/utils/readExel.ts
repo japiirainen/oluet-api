@@ -5,7 +5,7 @@ export const readXlsx = async (fileName: string): Promise<any> => {
    const sheet = book.Sheets['Alkon Hinnasto Tekstitiedostona']
    return utils.sheet_to_json(sheet, {
       raw: true,
-      blankrows: true,
+      range: 4,
       header: [
          'productId',
          'nimi',
@@ -32,6 +32,7 @@ export const readXlsx = async (fileName: string): Promise<any> => {
          'hapotGL',
          'sokeriGL',
          'kantavierrep',
+         'vari',
          'katkerot',
          'energia100ML',
          'valikoima',

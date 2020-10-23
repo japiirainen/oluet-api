@@ -27,73 +27,78 @@ declare global {
 }
 
 export interface NexusGenInputs {
-  IntFieldUpdateOperationsInput: { // input type
-    set?: number | null; // Int
-  }
   JuomaCreateInput: { // input type
     alaTyyppi?: string | null; // String
-    alkoholiProsentti: string; // String!
-    alue: string; // String!
+    alkoholiProsentti?: string | null; // String
+    alue?: string | null; // String
     EAN?: string | null; // String
     energia100ML?: string | null; // String
     erityisryhma?: string | null; // String
     etikettimerkintoja?: string | null; // String
-    hapotGL: string; // String!
-    hinnastoJarjestysKoodi: string; // String!
-    hinta: string; // String!
+    hapotGL?: string | null; // String
+    hinnastoJarjestysKoodi?: string | null; // String
+    hinta?: string | null; // String
     huomautus?: string | null; // String
-    kantavierrep?: string | null; // String
+    kantavierrep?: number | null; // Float
     katkerot?: string | null; // String
-    litraHinta: string; // String!
-    luennehdinta: string; // String!
-    nimi: string; // String!
+    litraHinta?: string | null; // String
+    luennehdinta?: string | null; // String
+    nimi?: string | null; // String
     olutTyyppi?: string | null; // String
-    pakkausTyyppi: string; // String!
+    pakkausTyyppi?: string | null; // String
     productId: string; // String!
-    pulloKoko: string; // String!
+    pulloKoko?: string | null; // String
     rypaleet?: string | null; // String
-    sokeriGL: number; // Int!
-    suljentaTyyppi: string; // String!
-    tyyppi: string; // String!
+    sokeriGL?: number | null; // Int
+    suljentaTyyppi?: string | null; // String
+    tyyppi?: string | null; // String
     uutuus?: string | null; // String
     valikoima?: string | null; // String
-    valmistaja: string; // String!
-    valmistusMaa: string; // String!
-    vuosikerta: string; // String!
+    valmistaja?: string | null; // String
+    valmistusMaa?: string | null; // String
+    vari?: string | null; // String
+    vuosikerta?: string | null; // String
   }
   JuomaUpdateInput: { // input type
     alaTyyppi?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
-    alkoholiProsentti?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
-    alue?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    alkoholiProsentti?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    alue?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     EAN?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     energia100ML?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     erityisryhma?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     etikettimerkintoja?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
-    hapotGL?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
-    hinnastoJarjestysKoodi?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
-    hinta?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    hapotGL?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    hinnastoJarjestysKoodi?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    hinta?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     huomautus?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
-    kantavierrep?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    kantavierrep?: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'] | null; // NullableFloatFieldUpdateOperationsInput
     katkerot?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
-    litraHinta?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
-    luennehdinta?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
-    nimi?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    litraHinta?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    luennehdinta?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    nimi?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     olutTyyppi?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
-    pakkausTyyppi?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    pakkausTyyppi?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     productId?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
-    pulloKoko?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    pulloKoko?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     rypaleet?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
-    sokeriGL?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
-    suljentaTyyppi?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
-    tyyppi?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    sokeriGL?: NexusGenInputs['NullableIntFieldUpdateOperationsInput'] | null; // NullableIntFieldUpdateOperationsInput
+    suljentaTyyppi?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    tyyppi?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     uutuus?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     valikoima?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
-    valmistaja?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
-    valmistusMaa?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
-    vuosikerta?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    valmistaja?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    valmistusMaa?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    vari?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    vuosikerta?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
   }
   JuomaWhereUniqueInput: { // input type
     id?: number | null; // Int
+  }
+  NullableFloatFieldUpdateOperationsInput: { // input type
+    set?: number | null; // Float
+  }
+  NullableIntFieldUpdateOperationsInput: { // input type
+    set?: number | null; // Int
   }
   NullableStringFieldUpdateOperationsInput: { // input type
     set?: string | null; // String
@@ -125,10 +130,11 @@ export interface NexusGenRootTypes {
     erityisryhma?: string | null; // String
     etikettimerkintoja?: string | null; // String
     hapotGL?: string | null; // String
+    hinnastoJarjestysKoodi?: string | null; // String
     hinta?: string | null; // String
     huomautus?: string | null; // String
     id?: string | null; // ID
-    kantavierrep?: string | null; // String
+    kantavierrep?: number | null; // Float
     katkerot?: string | null; // String
     litraHinta?: string | null; // String
     luonnehdinta?: string | null; // String
@@ -141,9 +147,11 @@ export interface NexusGenRootTypes {
     sokeriGL?: number | null; // Int
     suljentaTyyppi?: string | null; // String
     tyyppi?: string | null; // String
+    uutuus?: string | null; // String
     valikoima?: string | null; // String
     valmistaja?: string | null; // String
     valmistusMaa?: string | null; // String
+    vari?: string | null; // String
     vuosikerta?: string | null; // String
   }
   Mutation: {};
@@ -151,10 +159,11 @@ export interface NexusGenRootTypes {
 }
 
 export interface NexusGenAllTypes extends NexusGenRootTypes {
-  IntFieldUpdateOperationsInput: NexusGenInputs['IntFieldUpdateOperationsInput'];
   JuomaCreateInput: NexusGenInputs['JuomaCreateInput'];
   JuomaUpdateInput: NexusGenInputs['JuomaUpdateInput'];
   JuomaWhereUniqueInput: NexusGenInputs['JuomaWhereUniqueInput'];
+  NullableFloatFieldUpdateOperationsInput: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'];
+  NullableIntFieldUpdateOperationsInput: NexusGenInputs['NullableIntFieldUpdateOperationsInput'];
   NullableStringFieldUpdateOperationsInput: NexusGenInputs['NullableStringFieldUpdateOperationsInput'];
   StringFieldUpdateOperationsInput: NexusGenInputs['StringFieldUpdateOperationsInput'];
   String: NexusGenScalars['String'];
@@ -175,10 +184,11 @@ export interface NexusGenFieldTypes {
     erityisryhma: string | null; // String
     etikettimerkintoja: string | null; // String
     hapotGL: string | null; // String
+    hinnastoJarjestysKoodi: string | null; // String
     hinta: string | null; // String
     huomautus: string | null; // String
     id: string | null; // ID
-    kantavierrep: string | null; // String
+    kantavierrep: number | null; // Float
     katkerot: string | null; // String
     litraHinta: string | null; // String
     luonnehdinta: string | null; // String
@@ -191,9 +201,11 @@ export interface NexusGenFieldTypes {
     sokeriGL: number | null; // Int
     suljentaTyyppi: string | null; // String
     tyyppi: string | null; // String
+    uutuus: string | null; // String
     valikoima: string | null; // String
     valmistaja: string | null; // String
     valmistusMaa: string | null; // String
+    vari: string | null; // String
     vuosikerta: string | null; // String
   }
   Mutation: { // field return type
@@ -237,7 +249,7 @@ export interface NexusGenInheritedFields {}
 
 export type NexusGenObjectNames = "Juoma" | "Mutation" | "Query";
 
-export type NexusGenInputNames = "IntFieldUpdateOperationsInput" | "JuomaCreateInput" | "JuomaUpdateInput" | "JuomaWhereUniqueInput" | "NullableStringFieldUpdateOperationsInput" | "StringFieldUpdateOperationsInput";
+export type NexusGenInputNames = "JuomaCreateInput" | "JuomaUpdateInput" | "JuomaWhereUniqueInput" | "NullableFloatFieldUpdateOperationsInput" | "NullableIntFieldUpdateOperationsInput" | "NullableStringFieldUpdateOperationsInput" | "StringFieldUpdateOperationsInput";
 
 export type NexusGenEnumNames = never;
 

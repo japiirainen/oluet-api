@@ -1,6 +1,6 @@
 import { objectType } from '@nexus/schema'
 
-export const JuomaT = objectType({
+export const Juoma = objectType({
    name: 'Juoma',
    definition(t) {
       t.id('id')

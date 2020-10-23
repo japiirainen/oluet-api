@@ -1,11 +1,12 @@
 import { extendType, mutationType } from '@nexus/schema'
 import { ALKO_FILE } from '../../utils/constants'
 import { readXlsx } from '../../utils/readExel'
-import { JuomaT } from './Juoma'
+import { Juoma } from './Juoma'
 
 export const CrudMutation = mutationType({
    definition(t) {
-      t.crud.createOneJuoma(), t.crud.updateOneJuoma()
+      t.crud.createOneJuoma()
+      t.crud.updateOneJuoma()
    },
 })
 
@@ -13,7 +14,7 @@ export const saveAllDrinks = extendType({
    type: 'Mutation',
    definition(t) {
       t.field('saveAllDrinks', {
-         type: JuomaT,
+         type: Juoma,
          async resolve(_root, _args, { prisma }): Promise<any> {
             const data = await readXlsx(ALKO_FILE)
             await Promise.all(

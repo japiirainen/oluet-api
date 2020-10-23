@@ -108,6 +108,9 @@ export interface NexusGenInputs {
   NullableStringFieldUpdateOperationsInput: { // input type
     set?: string | null; // String
   }
+  PriceWhereUniqueInput: { // input type
+    id?: number | null; // Int
+  }
   StringFieldUpdateOperationsInput: { // input type
     set?: string | null; // String
   }
@@ -162,6 +165,12 @@ export interface NexusGenRootTypes {
     vuosikerta?: string | null; // String
   }
   Mutation: {};
+  Price: { // root type
+    date?: NexusGenScalars['Date'] | null; // Date
+    hinta?: number | null; // Float
+    id?: string | null; // ID
+    productId?: string | null; // String
+  }
   Query: {};
 }
 
@@ -173,6 +182,7 @@ export interface NexusGenAllTypes extends NexusGenRootTypes {
   NullableFloatFieldUpdateOperationsInput: NexusGenInputs['NullableFloatFieldUpdateOperationsInput'];
   NullableIntFieldUpdateOperationsInput: NexusGenInputs['NullableIntFieldUpdateOperationsInput'];
   NullableStringFieldUpdateOperationsInput: NexusGenInputs['NullableStringFieldUpdateOperationsInput'];
+  PriceWhereUniqueInput: NexusGenInputs['PriceWhereUniqueInput'];
   StringFieldUpdateOperationsInput: NexusGenInputs['StringFieldUpdateOperationsInput'];
   String: NexusGenScalars['String'];
   Int: NexusGenScalars['Int'];
@@ -223,9 +233,17 @@ export interface NexusGenFieldTypes {
     saveAllDrinks: NexusGenRootTypes['Juoma'] | null; // Juoma
     updateOneJuoma: NexusGenRootTypes['Juoma'] | null; // Juoma
   }
+  Price: { // field return type
+    date: NexusGenScalars['Date'] | null; // Date
+    hinta: number | null; // Float
+    id: string | null; // ID
+    productId: string | null; // String
+  }
   Query: { // field return type
     juoma: NexusGenRootTypes['Juoma'] | null; // Juoma
     juomas: NexusGenRootTypes['Juoma'][]; // [Juoma!]!
+    price: NexusGenRootTypes['Price'] | null; // Price
+    prices: NexusGenRootTypes['Price'][]; // [Price!]!
   }
 }
 
@@ -249,6 +267,15 @@ export interface NexusGenArgTypes {
       first?: number | null; // Int
       last?: number | null; // Int
     }
+    price: { // args
+      where: NexusGenInputs['PriceWhereUniqueInput']; // PriceWhereUniqueInput!
+    }
+    prices: { // args
+      after?: NexusGenInputs['PriceWhereUniqueInput'] | null; // PriceWhereUniqueInput
+      before?: NexusGenInputs['PriceWhereUniqueInput'] | null; // PriceWhereUniqueInput
+      first?: number | null; // Int
+      last?: number | null; // Int
+    }
   }
 }
 
@@ -257,9 +284,9 @@ export interface NexusGenAbstractResolveReturnTypes {
 
 export interface NexusGenInheritedFields {}
 
-export type NexusGenObjectNames = "Juoma" | "Mutation" | "Query";
+export type NexusGenObjectNames = "Juoma" | "Mutation" | "Price" | "Query";
 
-export type NexusGenInputNames = "DateTimeFieldUpdateOperationsInput" | "JuomaCreateInput" | "JuomaUpdateInput" | "JuomaWhereUniqueInput" | "NullableFloatFieldUpdateOperationsInput" | "NullableIntFieldUpdateOperationsInput" | "NullableStringFieldUpdateOperationsInput" | "StringFieldUpdateOperationsInput";
+export type NexusGenInputNames = "DateTimeFieldUpdateOperationsInput" | "JuomaCreateInput" | "JuomaUpdateInput" | "JuomaWhereUniqueInput" | "NullableFloatFieldUpdateOperationsInput" | "NullableIntFieldUpdateOperationsInput" | "NullableStringFieldUpdateOperationsInput" | "PriceWhereUniqueInput" | "StringFieldUpdateOperationsInput";
 
 export type NexusGenEnumNames = never;
 

@@ -138,9 +138,22 @@ input NullableStringFieldUpdateOperationsInput {
   set: String
 }
 
+type Price {
+  date: Date
+  hinta: Float
+  id: ID
+  productId: String
+}
+
+input PriceWhereUniqueInput {
+  id: Int
+}
+
 type Query {
   juoma(where: JuomaWhereUniqueInput!): Juoma
   juomas(after: JuomaWhereUniqueInput, before: JuomaWhereUniqueInput, first: Int, last: Int): [Juoma!]!
+  price(where: PriceWhereUniqueInput!): Price
+  prices(after: PriceWhereUniqueInput, before: PriceWhereUniqueInput, first: Int, last: Int): [Price!]!
 }
 
 input StringFieldUpdateOperationsInput {

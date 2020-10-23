@@ -1,7 +1,7 @@
 import { objectType } from '@nexus/schema'
 
-export const PriceT = objectType({
-   name: 'PriceT',
+export const Price = objectType({
+   name: 'Price',
    definition(t) {
       t.id('id')
       t.date('date')

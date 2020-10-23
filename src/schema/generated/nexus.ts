@@ -55,7 +55,7 @@ export interface NexusGenInputs {
     sokeriGL: number; // Float!
     suljentaTyyppi: string; // String!
     tyyppi: string; // String!
-    Valikoima: string; // String!
+    valikoima: string; // String!
     valmistaja: string; // String!
     valmistusMaa: string; // String!
     vuosikerta: number; // Int!
@@ -79,7 +79,7 @@ export interface NexusGenInputs {
     sokeriGL?: NexusGenInputs['FloatFieldUpdateOperationsInput'] | null; // FloatFieldUpdateOperationsInput
     suljentaTyyppi?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     tyyppi?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
-    Valikoima?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    valikoima?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     valmistaja?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     valmistusMaa?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     vuosikerta?: NexusGenInputs['IntFieldUpdateOperationsInput'] | null; // IntFieldUpdateOperationsInput
@@ -129,7 +129,7 @@ export interface NexusGenRootTypes {
     sokeriGL?: number | null; // Float
     suljentaTyyppi?: string | null; // String
     tyyppi?: string | null; // String
-    Valikoima?: string | null; // String
+    valikoima?: string | null; // String
     valmistaja?: string | null; // String
     valmistusMaa?: string | null; // String
     vuosikerta?: number | null; // Int
@@ -177,7 +177,7 @@ export interface NexusGenFieldTypes {
     sokeriGL: number | null; // Float
     suljentaTyyppi: string | null; // String
     tyyppi: string | null; // String
-    Valikoima: string | null; // String
+    valikoima: string | null; // String
     valmistaja: string | null; // String
     valmistusMaa: string | null; // String
     vuosikerta: number | null; // Int

@@ -30,5 +30,5 @@ model Juoma {
   hapotGL           Float
   sokeriGL          Float
   energia100ML      Float
-  Valikoima         String
+  valikoima         String
 }

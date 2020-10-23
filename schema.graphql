@@ -41,7 +41,7 @@ type Juoma {
   sokeriGL: Float
   suljentaTyyppi: String
   tyyppi: String
-  Valikoima: String
+  valikoima: String
   valmistaja: String
   valmistusMaa: String
   vuosikerta: Int
@@ -66,7 +66,7 @@ input JuomaCreateInput {
   sokeriGL: Float!
   suljentaTyyppi: String!
   tyyppi: String!
-  Valikoima: String!
+  valikoima: String!
   valmistaja: String!
   valmistusMaa: String!
   vuosikerta: Int!
@@ -91,7 +91,7 @@ input JuomaUpdateInput {
   sokeriGL: FloatFieldUpdateOperationsInput
   suljentaTyyppi: StringFieldUpdateOperationsInput
   tyyppi: StringFieldUpdateOperationsInput
-  Valikoima: StringFieldUpdateOperationsInput
+  valikoima: StringFieldUpdateOperationsInput
   valmistaja: StringFieldUpdateOperationsInput
   valmistusMaa: StringFieldUpdateOperationsInput
   vuosikerta: IntFieldUpdateOperationsInput

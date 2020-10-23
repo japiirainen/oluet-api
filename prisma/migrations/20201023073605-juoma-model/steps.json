@@ -73,6 +73,13 @@
     {
       "tag": "CreateField",
       "model": "Juoma",
+      "field": "created",
+      "type": "DateTime",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Juoma",
       "field": "nimi",
       "type": "String",
       "arity": "Required"
@@ -213,7 +220,7 @@
     {
       "tag": "CreateField",
       "model": "Juoma",
-      "field": "Valikoima",
+      "field": "valikoima",
       "type": "String",
       "arity": "Required"
     }

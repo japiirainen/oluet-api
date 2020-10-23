@@ -25,6 +25,6 @@ export const JuomaT = objectType({
       t.float('hapotGL')
       t.float('sokeriGL')
       t.float('energia100ML')
-      t.string('Valikoima')
+      t.string('valikoima')
    },
 })

@@ -36,13 +36,13 @@
     "@types/node-fetch": "^2.5.7",
     "apollo-server-express": "^2.18.2",
     "dotenv": "^8.2.0",
-    "exceljs": "^4.1.1",
     "express": "^4.17.1",
     "fp-ts": "^2.8.4",
     "graphql": "^15.3.0",
     "graphql-middleware": "^4.0.2",
     "graphql-scalars": "^1.4.1",
     "nexus-plugin-prisma": "^0.22.0",
-    "ramda": "^0.27.1"
+    "ramda": "^0.27.1",
+    "xlsx": "^0.16.8"
   }
 }

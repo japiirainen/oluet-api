@@ -17,15 +17,23 @@ type Juoma {
   alaTyyppi: String
   alkoholiProsentti: String
   alue: String
+
+  """Date of listing provided by Alko."""
   date: Date
   EAN: String
+
+  """Kcal / 100ml"""
   energia100ML: String
   erityisryhma: String
   etikettimerkintoja: String
+
+  """hapot g / l"""
   hapotGL: String
   hinnastoJarjestysKoodi: String
   hinta: Float
   huomautus: String
+
+  """Id provided by my Postgres."""
   id: ID
   kantavierrep: Float
   katkerot: String
@@ -34,9 +42,13 @@ type Juoma {
   nimi: String
   olutTyyppi: String
   pakkausTyyppi: String
+
+  """Alko id."""
   productId: String
   pulloKoko: String
   rypaleet: String
+
+  """sokeri g / l"""
   sokeriGL: Int
   suljentaTyyppi: String
   tyyppi: String
@@ -139,9 +151,14 @@ input NullableStringFieldUpdateOperationsInput {
 }
 
 type Price {
+  """Listing date provided by Alko."""
   date: Date
+
+  """Price if the product."""
   hinta: Float
   id: ID
+
+  """Id if the product in question."""
   productId: String
 }
 
@@ -150,10 +167,11 @@ input PriceWhereUniqueInput {
 }
 
 type Query {
+  etsiTyypilla(tyyppi: String!): [Juoma]
+  hinnat(after: PriceWhereUniqueInput, before: PriceWhereUniqueInput, first: Int, last: Int): [Price!]!
+  hinta(where: PriceWhereUniqueInput!): Price
   juoma(where: JuomaWhereUniqueInput!): Juoma
-  juomas(after: JuomaWhereUniqueInput, before: JuomaWhereUniqueInput, first: Int, last: Int): [Juoma!]!
-  price(where: PriceWhereUniqueInput!): Price
-  prices(after: PriceWhereUniqueInput, before: PriceWhereUniqueInput, first: Int, last: Int): [Price!]!
+  juomat(after: JuomaWhereUniqueInput, before: JuomaWhereUniqueInput, first: Int, last: Int): [Juoma!]!
 }
 
 input StringFieldUpdateOperationsInput {

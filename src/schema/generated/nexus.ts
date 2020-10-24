@@ -240,10 +240,11 @@ export interface NexusGenFieldTypes {
     productId: string | null; // String
   }
   Query: { // field return type
+    etsiTyypilla: Array<NexusGenRootTypes['Juoma'] | null> | null; // [Juoma]
+    hinnat: NexusGenRootTypes['Price'][]; // [Price!]!
+    hinta: NexusGenRootTypes['Price'] | null; // Price
     juoma: NexusGenRootTypes['Juoma'] | null; // Juoma
-    juomas: NexusGenRootTypes['Juoma'][]; // [Juoma!]!
-    price: NexusGenRootTypes['Price'] | null; // Price
-    prices: NexusGenRootTypes['Price'][]; // [Price!]!
+    juomat: NexusGenRootTypes['Juoma'][]; // [Juoma!]!
   }
 }
 
@@ -258,21 +259,24 @@ export interface NexusGenArgTypes {
     }
   }
   Query: {
-    juoma: { // args
-      where: NexusGenInputs['JuomaWhereUniqueInput']; // JuomaWhereUniqueInput!
+    etsiTyypilla: { // args
+      tyyppi: string; // String!
     }
-    juomas: { // args
-      after?: NexusGenInputs['JuomaWhereUniqueInput'] | null; // JuomaWhereUniqueInput
-      before?: NexusGenInputs['JuomaWhereUniqueInput'] | null; // JuomaWhereUniqueInput
+    hinnat: { // args
+      after?: NexusGenInputs['PriceWhereUniqueInput'] | null; // PriceWhereUniqueInput
+      before?: NexusGenInputs['PriceWhereUniqueInput'] | null; // PriceWhereUniqueInput
       first?: number | null; // Int
       last?: number | null; // Int
     }
-    price: { // args
+    hinta: { // args
       where: NexusGenInputs['PriceWhereUniqueInput']; // PriceWhereUniqueInput!
     }
-    prices: { // args
-      after?: NexusGenInputs['PriceWhereUniqueInput'] | null; // PriceWhereUniqueInput
-      before?: NexusGenInputs['PriceWhereUniqueInput'] | null; // PriceWhereUniqueInput
+    juoma: { // args
+      where: NexusGenInputs['JuomaWhereUniqueInput']; // JuomaWhereUniqueInput!
+    }
+    juomat: { // args
+      after?: NexusGenInputs['JuomaWhereUniqueInput'] | null; // JuomaWhereUniqueInput
+      before?: NexusGenInputs['JuomaWhereUniqueInput'] | null; // JuomaWhereUniqueInput
       first?: number | null; // Int
       last?: number | null; // Int
     }

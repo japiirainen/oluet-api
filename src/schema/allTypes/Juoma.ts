@@ -3,9 +3,9 @@ import { objectType } from '@nexus/schema'
 export const Juoma = objectType({
    name: 'Juoma',
    definition(t) {
-      t.id('id')
-      t.date('date')
-      t.string('productId')
+      t.id('id', { description: 'Id provided by my Postgres.' })
+      t.date('date', { description: 'Date of listing provided by Alko.' })
+      t.string('productId', { description: 'Alko id.' })
       t.string('nimi', { nullable: true })
       t.string('valmistaja', { nullable: true })
       t.string('pulloKoko', { nullable: true })
@@ -27,12 +27,12 @@ export const Juoma = objectType({
       t.string('pakkausTyyppi', { nullable: true })
       t.string('suljentaTyyppi', { nullable: true })
       t.string('alkoholiProsentti', { nullable: true })
-      t.string('hapotGL', { nullable: true })
-      t.int('sokeriGL', { nullable: true })
+      t.string('hapotGL', { nullable: true, description: 'hapot g / l' })
+      t.int('sokeriGL', { nullable: true, description: 'sokeri g / l' })
       t.float('kantavierrep', { nullable: true })
       t.string('vari', { nullable: true })
       t.string('katkerot', { nullable: true })
-      t.string('energia100ML', { nullable: true })
+      t.string('energia100ML', { nullable: true, description: 'Kcal / 100ml' })
       t.string('valikoima', { nullable: true })
       t.string('EAN', { nullable: true })
    },

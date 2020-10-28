@@ -42,6 +42,7 @@
     "graphql-middleware": "^4.0.2",
     "graphql-scalars": "^1.4.1",
     "nexus-plugin-prisma": "^0.22.0",
+    "nodejs-file-downloader": "^3.0.1",
     "ramda": "^0.27.1",
     "xlsx": "^0.16.8"
   }

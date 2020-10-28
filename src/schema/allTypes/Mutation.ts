@@ -1,4 +1,5 @@
 import { extendType, mutationType } from '@nexus/schema'
+import { Juoma as JuomaT } from '@prisma/client'
 import { ALKO_FILE } from '../../utils/constants'
 import { readXlsx } from '../../utils/readExel'
 import { Juoma } from './Juoma'
@@ -18,18 +19,18 @@ export const saveAllDrinks = extendType({
          async resolve(_root, _args, { prisma }): Promise<any> {
             const data = await readXlsx(ALKO_FILE)
             await Promise.all(
-               data.map((juoma: any) =>
+               data.map((juoma: JuomaT) =>
                   prisma.price.create({
                      data: {
                         productId: juoma.productId,
                         date: juoma.date,
-                        hinta: juoma.hinta,
+                        hinta: juoma.hinta || 1,
                      },
                   })
                )
             )
             const res = await Promise.all(
-               data.map((juoma: any) => prisma.juoma.create({ data: juoma }))
+               data.map((juoma: JuomaT) => prisma.juoma.create({ data: juoma }))
             )
             return res[0]
          },

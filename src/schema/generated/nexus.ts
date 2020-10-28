@@ -243,6 +243,7 @@ export interface NexusGenFieldTypes {
     etsiTyypilla: Array<NexusGenRootTypes['Juoma'] | null> | null; // [Juoma]
     hinnat: NexusGenRootTypes['Price'][]; // [Price!]!
     hinta: NexusGenRootTypes['Price'] | null; // Price
+    hintaHistoria: Array<NexusGenRootTypes['Price'] | null> | null; // [Price]
     juoma: NexusGenRootTypes['Juoma'] | null; // Juoma
     juomat: NexusGenRootTypes['Juoma'][]; // [Juoma!]!
   }
@@ -270,6 +271,9 @@ export interface NexusGenArgTypes {
     }
     hinta: { // args
       where: NexusGenInputs['PriceWhereUniqueInput']; // PriceWhereUniqueInput!
+    }
+    hintaHistoria: { // args
+      productId: string; // String!
     }
     juoma: { // args
       where: NexusGenInputs['JuomaWhereUniqueInput']; // JuomaWhereUniqueInput!

@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
+import { Juoma } from '@prisma/client'
 import { compose, drop, prop, replace } from 'ramda'
 import { readFile, utils } from 'xlsx'
 
@@ -8,10 +9,10 @@ const constructDate = (arr: Array<string>) => new Date(`${arr[2]}-${arr[1]}-${ar
 //@ts-ignore
 const getDate = compose(constructDate, splitByDot, removePrefix, prop('productId'))
 
-export const readXlsx = async (fileName: string): Promise<any> => {
+export const readXlsx = async (fileName: string): Promise<Juoma[]> => {
    const book = await readFile(fileName)
    const sheet = book.Sheets['Alkon Hinnasto Tekstitiedostona']
-   const json: any = utils.sheet_to_json(sheet, {
+   const json: Juoma[] = utils.sheet_to_json(sheet, {
       raw: true,
       header: [
          'productId',
@@ -47,11 +48,13 @@ export const readXlsx = async (fileName: string): Promise<any> => {
       ],
    })
    const data = drop(3, json)
-   return data.map((x: any) => ({
+   return data.map((x: Juoma) => ({
       ...x,
       //@ts-ignore
       date: getDate(json[0]),
+      //@ts-ignore
       hinta: parseFloat(x.hinta),
+      //@ts-ignore
       litraHinta: parseFloat(x.litraHinta),
    }))
 }

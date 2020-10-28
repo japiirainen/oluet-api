@@ -170,6 +170,7 @@ type Query {
   etsiTyypilla(tyyppi: String!): [Juoma]
   hinnat(after: PriceWhereUniqueInput, before: PriceWhereUniqueInput, first: Int, last: Int): [Price!]!
   hinta(where: PriceWhereUniqueInput!): Price
+  hintaHistoria(productId: String!): [Price]
   juoma(where: JuomaWhereUniqueInput!): Juoma
   juomat(after: JuomaWhereUniqueInput, before: JuomaWhereUniqueInput, first: Int, last: Int): [Juoma!]!
 }

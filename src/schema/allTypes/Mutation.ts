@@ -11,6 +11,19 @@ export const CrudMutation = mutationType({
    },
 })
 
+export const wipeDrinks = extendType({
+   type: 'Mutation',
+   definition(t) {
+      t.field('wipeAllDrinks', {
+         type: 'String',
+         async resolve(_root, _args, { prisma }): Promise<any> {
+            await prisma.juoma.deleteMany({ where: {} })
+            return 'success'
+         },
+      })
+   },
+})
+
 export const saveAllDrinks = extendType({
    type: 'Mutation',
    definition(t) {

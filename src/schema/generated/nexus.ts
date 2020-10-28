@@ -232,6 +232,7 @@ export interface NexusGenFieldTypes {
     createOneJuoma: NexusGenRootTypes['Juoma']; // Juoma!
     saveAllDrinks: NexusGenRootTypes['Juoma'] | null; // Juoma
     updateOneJuoma: NexusGenRootTypes['Juoma'] | null; // Juoma
+    wipeAllDrinks: string | null; // String
   }
   Price: { // field return type
     date: NexusGenScalars['Date'] | null; // Date

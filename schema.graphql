@@ -136,6 +136,7 @@ type Mutation {
   createOneJuoma(data: JuomaCreateInput!): Juoma!
   saveAllDrinks: Juoma
   updateOneJuoma(data: JuomaUpdateInput!, where: JuomaWhereUniqueInput!): Juoma
+  wipeAllDrinks: String
 }
 
 input NullableFloatFieldUpdateOperationsInput {

@@ -48,7 +48,6 @@ export const readXlsx = async (fileName: string): Promise<Juoma[]> => {
       ],
    })
    const data = drop(3, json)
-   console.log(json[0])
    return data.map((x: Juoma) => ({
       ...x,
       //@ts-ignore

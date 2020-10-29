@@ -30,6 +30,7 @@ jobs:
         with:
           node-version: '12.x'
       - run: npm ci
+      - run: npm run generate
       - run: npm run build
       - run: pm run prisma:migrate
       - run: npm run test

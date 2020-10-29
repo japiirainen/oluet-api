@@ -27,7 +27,8 @@
     "generate": "npm run generate:prisma && npm run generate:nexus",
     "generate:prisma": "prisma generate",
     "generate:nexus": "ts-node --transpile-only src/schema",
-    "prisma:migrate": "prisma migrate save --experimental && prisma migrate up --experimental"
+    "prisma:migrate": "prisma migrate save --experimental && prisma migrate up --experimental",
+    "test": "jest"
   },
   "dependencies": {
     "@nexus/schema": "^0.16.0",
@@ -41,6 +42,7 @@
     "graphql": "^15.3.0",
     "graphql-middleware": "^4.0.2",
     "graphql-scalars": "^1.4.1",
+    "jest": "^26.6.1",
     "nexus-plugin-prisma": "^0.22.0",
     "nodejs-file-downloader": "^3.0.1",
     "ramda": "^0.27.1",

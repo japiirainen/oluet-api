@@ -32,7 +32,7 @@ jobs:
       - run: npm ci
       - run: npm run generate
       - run: npm run build
-      - run: pm run prisma:migrate
+      - run: npm run prisma:migrate
       - run: npm run test
   deploy:
     runs-on: ubuntu-latest

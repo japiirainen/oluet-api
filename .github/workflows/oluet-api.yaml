@@ -29,6 +29,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
+      - run: npm ci
+      - run: npm run build
       - run: yarn run prisma:migrate
       - run: yarn run test
   deploy:
@@ -37,6 +39,7 @@ jobs:
     needs: test
     steps:
       - uses: actions/checkout@v2
+      - run: npm ci
       - name: Run production migration
         run: yarn run prisma:migrate
         env:

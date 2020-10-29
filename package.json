@@ -21,11 +21,11 @@
   },
   "scripts": {
     "build": "tsc",
-    "prebuild": "npm run generate",
+    "prebuild": "yarn generate",
     "tscw": "tsc -w",
     "start": "yarn generate && node dist/index.js",
     "dev": "yarn generate && nodemon --exec ts-node --files src/index.ts",
-    "generate": "npm run generate:prisma && npm run generate:nexus",
+    "generate": "yarn generate:prisma && yarn generate:nexus",
     "generate:prisma": "prisma generate",
     "generate:nexus": "ts-node --transpile-only src/schema",
     "prisma:migrate": "prisma migrate save --experimental && prisma migrate up --experimental",

@@ -100,9 +100,17 @@ export interface NexusGenInputs {
     id?: number | null; // Int
   }
   NullableFloatFieldUpdateOperationsInput: { // input type
+    decrement?: number | null; // Float
+    divide?: number | null; // Float
+    increment?: number | null; // Float
+    multiply?: number | null; // Float
     set?: number | null; // Float
   }
   NullableIntFieldUpdateOperationsInput: { // input type
+    decrement?: number | null; // Int
+    divide?: number | null; // Int
+    increment?: number | null; // Int
+    multiply?: number | null; // Int
     set?: number | null; // Int
   }
   NullableStringFieldUpdateOperationsInput: { // input type
@@ -250,6 +258,63 @@ export interface NexusGenFieldTypes {
   }
 }
 
+export interface NexusGenFieldTypeNames {
+  Juoma: { // field return type name
+    alaTyyppi: 'String'
+    alkoholiProsentti: 'String'
+    alue: 'String'
+    date: 'Date'
+    EAN: 'String'
+    energia100ML: 'String'
+    erityisryhma: 'String'
+    etikettimerkintoja: 'String'
+    hapotGL: 'String'
+    hinnastoJarjestysKoodi: 'String'
+    hinta: 'Float'
+    huomautus: 'String'
+    id: 'ID'
+    kantavierrep: 'Float'
+    katkerot: 'String'
+    litraHinta: 'Float'
+    luonnehdinta: 'String'
+    nimi: 'String'
+    olutTyyppi: 'String'
+    pakkausTyyppi: 'String'
+    productId: 'String'
+    pulloKoko: 'String'
+    rypaleet: 'String'
+    sokeriGL: 'Int'
+    suljentaTyyppi: 'String'
+    tyyppi: 'String'
+    uutuus: 'String'
+    valikoima: 'String'
+    valmistaja: 'String'
+    valmistusMaa: 'String'
+    vari: 'String'
+    vuosikerta: 'String'
+  }
+  Mutation: { // field return type name
+    createOneJuoma: 'Juoma'
+    saveAllDrinks: 'Juoma'
+    updateOneJuoma: 'Juoma'
+    wipeAllDrinks: 'String'
+  }
+  Price: { // field return type name
+    date: 'Date'
+    hinta: 'Float'
+    id: 'ID'
+    productId: 'String'
+  }
+  Query: { // field return type name
+    etsiTyypilla: 'Juoma'
+    hinnat: 'Price'
+    hinta: 'Price'
+    hintaHistoria: 'Price'
+    juoma: 'Juoma'
+    juomat: 'Juoma'
+  }
+}
+
 export interface NexusGenArgTypes {
   Mutation: {
     createOneJuoma: { // args
@@ -311,6 +376,7 @@ export interface NexusGenTypes {
   rootTypes: NexusGenRootTypes;
   argTypes: NexusGenArgTypes;
   fieldTypes: NexusGenFieldTypes;
+  fieldTypeNames: NexusGenFieldTypeNames;
   allTypes: NexusGenAllTypes;
   inheritedFields: NexusGenInheritedFields;
   objectNames: NexusGenObjectNames;

@@ -140,10 +140,18 @@ type Mutation {
 }
 
 input NullableFloatFieldUpdateOperationsInput {
+  decrement: Float
+  divide: Float
+  increment: Float
+  multiply: Float
   set: Float
 }
 
 input NullableIntFieldUpdateOperationsInput {
+  decrement: Int
+  divide: Int
+  increment: Int
+  multiply: Int
   set: Int
 }
 

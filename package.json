@@ -28,7 +28,8 @@
     "generate:prisma": "prisma generate",
     "generate:nexus": "ts-node --transpile-only src/schema",
     "prisma:migrate": "prisma migrate save --experimental && prisma migrate up --experimental",
-    "test": "jest"
+    "test": "jest",
+    "postgres:start": "docker-compose up -d"
   },
   "dependencies": {
     "@nexus/schema": "^0.16.0",

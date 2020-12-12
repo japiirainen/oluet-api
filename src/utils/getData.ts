@@ -10,7 +10,7 @@ const delFile = async (fileToDel: string) => {
    }
 }
 
-export const getNewDate = async (
+export const getNewData = async (
    uri: string,
    destination: string,
    fileToDel: string
@@ -27,4 +27,4 @@ export const getNewDate = async (
    await downloader.download()
 }
 
-getNewDate(ALKO_URI, DESTINATION_LOC, ALKO_FILE)
+getNewData(ALKO_URI, DESTINATION_LOC, ALKO_FILE)

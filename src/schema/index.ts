@@ -6,7 +6,10 @@ import * as types from './allTypes'
 // --------------------------------------------------------------------->
 const pathToSchema = path.join(__dirname, '..', '..', 'schema.graphql')
 const pathToTypes = path.join(__dirname, 'generated', 'nexus.ts')
-const pathToContext = path.join(__dirname, '..', 'utils', 'context.ts')
+const pathToContext = path.join(
+   process.env.NODE_ENV === 'production' ? 'src' : __dirname,
+   'context.ts'
+)
 
 export default makeSchema({
    types,
@@ -23,7 +26,7 @@ export default makeSchema({
             alias: 'prisma',
          },
          {
-            source: require.resolve(pathToContext),
+            source: path.resolve(pathToContext),
             alias: 'Context',
          },
       ],

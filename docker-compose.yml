@@ -1,6 +1,12 @@
-version: '3.1'
+version: '3.9'
 
 services: 
+  nodeapp:
+    build:
+      context: .
+    restart: always
+    ports:
+      - 5000:5000
 
   adminer:
     image: adminer:latest
@@ -17,3 +23,5 @@ services:
       POSTGRES_DB: oluet_api_dev
     ports:
      - 5432:5432
+  
+

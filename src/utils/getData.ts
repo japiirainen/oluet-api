@@ -1,5 +1,4 @@
 import Downloader from 'nodejs-file-downloader'
-import { ALKO_URI, DESTINATION_LOC, ALKO_FILE } from './constants'
 import fs from 'fs'
 
 const delFile = async (fileToDel: string) => {
@@ -26,5 +25,3 @@ export const getNewData = async (
 
    await downloader.download()
 }
-
-getNewData(ALKO_URI, DESTINATION_LOC, ALKO_FILE)

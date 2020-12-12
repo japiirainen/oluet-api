@@ -1,6 +1,6 @@
 version: '3.9'
 
-services: 
+services:
   nodeapp:
     build:
       context: .
@@ -16,7 +16,7 @@ services:
     restart: always
     ports:
       - 8080:8080
- 
+
   db:
     image: postgres:latest
     restart: always
@@ -26,5 +26,3 @@ services:
       POSTGRES_DB: oluet_api_dev
     ports:
      - 5432:5432
-  
-

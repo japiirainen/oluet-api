@@ -20,7 +20,7 @@ export const start = async (): Promise<void> => {
       cors: false,
    })
 
-   app.listen({ port: PORT }, () =>
+   app.listen({ port: +PORT }, () =>
       console.log(`🚀 Server ready at http://localhost:${PORT}${server.graphqlPath}`)
    )
 }

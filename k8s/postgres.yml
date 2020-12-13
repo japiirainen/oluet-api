@@ -1,3 +1,19 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: postgres-pv
+  namespace: oluet-api
+  labels:
+    type: local
+    app: postgres
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/mnt/data"
 ---
 kind: PersistentVolumeClaim
 apiVersion: v1
@@ -5,6 +21,7 @@ metadata:
   name: postgres-pvc
   namespace: oluet-api
 spec:
+  storageClassName: manual
   accessModes:
     - "ReadWriteMany"
   resources:
@@ -18,7 +35,7 @@ metaData:
   name: postgres
   namespace: oluet-api
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: postgres
@@ -30,6 +47,7 @@ spec:
       containers:
         - name: postgres
           image: postgres:latest
+          imagePullPolicy: "IfNotPresent"
           ports:
             - containerPort: 5432
           env:
@@ -49,7 +67,7 @@ spec:
                     name: oluet-api-env
                     key: POSTGRES_DB
           volumeMounts:
-            - mountPath: /var/lib/postgres/
+            - mountPath: /var/lib/postgresql/data
               name: database
           resources: {}
       volumes:
@@ -65,10 +83,11 @@ metadata:
   name: postgres
   namespace: oluet-api
 spec:
-  selector:
-    app: postgres
+  type: NodePort
   ports:
   - port: 5432
     targetPort: 5432
+  selector:
+    app: postgres
 
     

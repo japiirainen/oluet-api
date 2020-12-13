@@ -5,4 +5,5 @@ export interface Context {
 }
 
 export const createContext = (): Context => ({ prisma })
+
 export const prisma = new PrismaClient()
